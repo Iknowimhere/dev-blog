@@ -1,4 +1,5 @@
-import NavBar from './components/NavBar';
+import NavBar from "../components/NavBar";
+import { Outlet } from "react-router";
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       {/* Intro */}
       {/* Featured posts */}
       {/* Recent posts */}
+      <Outlet />
     </div>
   );
 };
