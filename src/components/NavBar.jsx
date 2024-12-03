@@ -1,14 +1,19 @@
-import Image from "./Image";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
-import { useState } from "react";
-import { Link } from "react-router";
+import Image from './Image';
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/clerk-react';
+import { useState } from 'react';
+import { Link } from 'react-router';
 
 const NavBar = () => {
   const [open, setOpen] = useState(false);
   return (
-    <div className='w-full h-16 md:20 flex justify-around items-center'>
+    <div className='w-full h-16 md:20 flex justify-between items-center'>
       {/* LOGO */}
-      <Link to="/" className='flex items-center gap-2 text-2xl font-bold'>
+      <Link to='/' className='flex items-center gap-2 text-2xl font-bold'>
         <Image src={'/logo.png'} alt='logo' w={20} h={40} />
         <span>Dev blog</span>
       </Link>
@@ -44,17 +49,17 @@ const NavBar = () => {
         <Link to=''>Trending</Link>
         <Link to=''>Most Popular</Link>
         <Link to=''>About</Link>
-        
+
         <SignedOut>
-        <Link to='/login'>
-        <button className='px-8 py-2 bg-blue-800 text-white rounded-3xl '>
-          Login 👋
-        </button>
-      </Link>
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
+          <Link to='/login'>
+            <button className='px-8 py-2 bg-blue-800 text-white rounded-3xl '>
+              Login 👋
+            </button>
+          </Link>
+        </SignedOut>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
       </div>
     </div>
   );
